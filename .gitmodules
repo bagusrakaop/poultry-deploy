@@ -1,0 +1,6 @@
+[submodule "poultry-fe"]
+	path = poultry-fe
+	url = https://github.com/mastamaru/poultry-fe
+[submodule "poultry-be"]
+	path = poultry-be
+	url = https://github.com/mastamaru/poultry-be

@@ -7,11 +7,12 @@ steps:
     sshEndpoint: 'AWS VM'
     runOptions: 'commands'
     commands: |
-      cd poultry-deploy
       git pull origin main
       docker ps -q | xargs -r docker stop
       docker ps -aq | xargs -r docker rm
       docker images -q | xargs -r docker rmi -f
       docker volume ls -q | xargs -r docker volume rm
       docker compose up --build -d
+    workingDirectory: '/home/ubuntu/poultry-deploy'
     readyTimeout: '20000'
+    failOnStdErr: true

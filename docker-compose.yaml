@@ -1,0 +1,27 @@
+services:
+  frontend:
+    build:
+      context: ./poultry-fe
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    build:
+      context: ./poultry-be
+    ports:
+     - "5000:5000"
+    depends_on:
+      - mongodb
+    restart: always
+  
+  mongodb:
+    image: mongodb/mongodb-enterprise-server:7.0.16-rc1-ubuntu2204
+    volumes:
+      - poultrydb:/data/db
+    restart: always
+
+volumes:
+  poultrydb:

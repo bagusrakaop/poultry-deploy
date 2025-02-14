@@ -10,3 +10,4 @@ steps:
       chmod +x /home/ubuntu/poultry-deploy/deploy.sh
       /home/ubuntu/poultry-deploy/deploy.sh
     readyTimeout: '20000'
+    failOnStdErr: false

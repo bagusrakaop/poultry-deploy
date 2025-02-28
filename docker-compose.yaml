@@ -11,8 +11,6 @@ services:
   backend:
     build:
       context: ./poultry-be
-    ports:
-     - "5000:5000"
     depends_on:
       - mongodb
     restart: always
